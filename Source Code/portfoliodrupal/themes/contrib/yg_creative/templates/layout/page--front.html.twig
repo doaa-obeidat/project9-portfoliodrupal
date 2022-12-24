@@ -1,0 +1,79 @@
+<!-- start header section -->
+    <header id="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" id="mainNav">
+          {{page.logo}}
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"  aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+          </button>
+            {{page.primary_menu}}
+          </nav>
+      </div>
+    </header>
+<!-- End header section -->
+{# Content Section Start #}
+  {{page.content}}
+{# Content Section End #}
+
+<!-- FOOTER SECTION-->
+<section id="footer">
+  <div class="container">
+    <div class="row footer-menu-social">
+      <div class="col-md-8 footer-menu wow fadeInDown">
+        <ul>
+          {{page.footer_menu}}
+        </ul>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-md-3 col-sm-12 footer-columns wow fadeInDown" data-wow-delay="0.3s">
+          {{page.footer_about}}
+      </div>
+      <div class="col-md-3 col-sm-12 footer-columns wow fadeInDown" data-wow-delay="0.6s">
+        <h6>{{find_us_title}}</h6>
+        <p class="find_us_area">{{find_us_area}}</p>
+      </div>
+      <div class="col-md-3 col-sm-12 footer-columns lets-talk wow fadeInDown" data-wow-delay="0.9s">
+        <h6>{{lets_talk_title}}</h6>
+        <p><a href="tel:{{lets_talk_phone_no}}">{{lets_talk_phone_no}}</a></p>
+        <p><a href="mailto:{{lets_talk_email}}">{{lets_talk_email}}</a></p>
+      </div>
+      <div class="col-md-3 col-sm-12 footer-columns wow fadeInDown" data-wow-delay="0.9s">
+        <h6>{{social_link_title}}</h6>
+        <div class="social">
+          <ul>
+            {% if linkedin %}
+              <li><a href="{{linkedin}}"><i class="fa fa-linkedin"></i></a></li>
+            {% endif %}
+            {% if instagram %}
+              <li><a href="{{instagram}}"><i class="fa fa-instagram"></i></a></li>
+            {% endif %}
+            {% if googleplus %}
+              <li>
+                <a href="{{googleplus}}"><i class="fa fa-google-plus"></i></a>
+              </li>
+            {% endif %}
+            {% if facebook %}
+              <li><a href="{{facebook}}"><i class="fa fa-facebook-f"></i></a></li>
+            {% endif %}
+            {% if twitter %}
+              <li><a href="{{twitter}}"><i class="fa fa-twitter"></i></a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- copyright -->
+<section id="copyright">
+  <div class="container">
+    <div class="row">  
+      <div class="col-md-6 mx-auto text-center wow fadeInDown" data-wow-delay="0.3s"> 
+        <p>© 2018 <span>YG Creative</span>. All Rights Reserved. </p>
+        <p>Theme By<a href="https://www.drupaldevelopersstudio.com/" target="_blank"> Drupal Developers Studio</a>, A Division of <a href="https://www.youngglobes.com/" target="_blank">Young Globes</a></p>  
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Copyright -->

@@ -1,0 +1,22 @@
+{{content.field_banner_section}}
+<!-- About section -->
+  <section class="about about-page">
+    <div class="container">
+      <div class="row">        
+        <div class="col-md-6 about-img wow fadeInRight">
+          <img src="{{file_url(node.field_image.entity.uri.value)}}" 
+            alt="{{ content.field_image['#items'].alt }}" 
+            class="img-fluid wow fadeInUp" 
+            title="{{ content.field_image['#items'].alt }}">
+        </div>
+
+        <div class="col-md-6 about-description  service-detail-page wow fadeInLeft">
+          {{content.field_service_icon}}
+          <h2>{{node.title.value}}</h2>
+          {{content.body}}
+        </div>
+      </div>
+    </div>
+  </section>
+<!--  End About section -->
+{{content.field_sections}}

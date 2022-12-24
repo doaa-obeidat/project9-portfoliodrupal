@@ -1,0 +1,200 @@
+.user-logged-in .navbar.navbar-default.navbar-fixed-top{
+	top: 100px;
+	z-index: 300;
+}
+.panel-transparent .panel-body{
+	width: 50%;
+	margin:0 auto;
+}
+#services{
+	    background-color: #113054;
+}
+div#block-breadcrumbs {
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+nav.breadcrumb {
+    border-bottom: 42px solid #113054;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    height: 0;
+    width: 265px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    background-color: transparent;
+    bottom: 57px;
+}
+.breadcrumb ol, .breadcrumb a{
+	color: #fff;
+    top: 16px;
+    position: inherit;
+}
+.testimonial-review p{
+    color: #000;
+}
+li.pager__item.pager__item--next,li.pager__item.pager__item--previous {
+    display: none;
+}
+li.pager__item {
+    padding: 0px !important;
+}
+.pager li > a, .pager li > span{
+	border-radius: 0px;
+	padding: 9px 14px;
+}
+.pager li > a:hover, .pager li > a:focus{
+	background-color: transparent;
+	color: #113054;
+	
+}
+.pager li > a{
+	color: #113054;
+}
+.pager__item.is-active a,.pager__item.is-active a:hover{
+	background-color: #113054;
+	color: #fff;
+	border-radius: 1px solid #113054;
+}
+.pager{
+	margin-bottom: 50px;
+}
+/* comments form */
+.comment_title_section label{
+	width: 100%;
+	margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+
+}
+.form-textarea-wrapper{
+	width: 100%;
+    float: left;
+}
+ #edit-subject-0-value, #edit-field-poster-name-0-value{
+	width: 100%;
+	height: 40px;
+}
+.comments-cont p {
+    color: #464444;
+    font-weight: 400;
+    font-size: 13.6px;
+}
+#blog-detail nav{
+	float: right;
+}
+#blog-detail li span>a{
+    cursor: default;
+    color: #000;
+    font-weight: bolder;
+    text-transform: capitalize;
+}   
+#blog-detail li span{
+	color: #c6c6c6;
+} 
+#blog-detail hr{
+	width: 100%;
+	background-color: #f5f5f5;
+}
+.comment_title_section h4	{
+    color: rgba(12, 12, 12, 0.77);
+    font-size: 23px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}  
+#blog-detail #edit-submit  {
+    background-color: #113054;
+    font-size: 16px;
+    color: #fff !important;
+    -webkit-font-smoothing: antialiased;
+    border: 0;
+    display: inline-block;
+    margin: 20px 0px 0px;
+    font-weight: 300;
+    text-transform: capitalize;
+    border-radius: 0px;
+    padding: 6px 16px 8px;
+ }   
+ #edit-preview{
+ 	display: none;
+ }
+ .enquiry_form .form-textarea-wrapper {
+ 	border: 1px solid #999;
+ 	border-radius: 0px !important;
+ }
+ .enquiry_form input#edit-actions-submit {
+    position: relative;
+    left: 15px;
+}
+/* comments form */
+article.contextual-region.profile {
+    padding: 245px 68px;
+}
+form#comment-comment-delete-form {
+    padding: 245px 68px 161px 68px;
+}
+#edit-name {
+    width: 100%;
+    height: 40px;
+}
+.comments-cont .links.inline li:nth-child(2){
+	display: none;
+}
+.comments-cont .links.inline li:nth-child(3){
+	display: none;
+}
+.comments-cont .links.inline .comment-reply{
+	display: none;
+}/*
+#block-yg-insurance-local-tasks {
+    padding-top: 200px;
+}*/
+@media only screen and (min-width:320px) and (max-width: 992px) {
+
+.enquiry_form input#edit-actions-submit{
+	margin-top: 20px;
+}
+} 
+.blog-detail-header a{
+color: #929292;
+}
+.panel{
+	 border: none; 
+	 box-shadow: none;
+}
+.ui-accordion .ui-accordion-header{
+    padding: 20px;
+    color: #3f3f3f;
+    font-size: 17px;
+    font-family: 'open sans';
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+	border: none;
+	background-color: #113054;
+	color: #fff !important
+}
+.ui-state-default{
+	border:none;
+}
+.panel :focus {
+	outline: none;
+}
+.ui-accordion .ui-accordion-content {
+     padding: 0px; 
+    overflow: auto;
+    height: auto;
+}
+.ui-accordion .ui-accordion-content p{
+	line-height: 2;
+    padding: 20px 30px 30px 30px;
+    color: #787878;
+    font-size: 17px;
+}
+.ui-icon{
+	padding-right: 21px;
+}
+#user-login{
+   margin-top: 200px;
+}

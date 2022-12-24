@@ -1,0 +1,31 @@
+_core:
+  default_config_hash: dg8BdhyitNdXa91X13Y1vjvE4Lbh5u54mHqHeTiQt4w
+favicon:
+  path: ''
+  use_default: true
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  path: ''
+  use_default: true
+banner_display: 1
+show_breadcrumbs: 1
+banner_head: 'Free Drupal 8 Theme'
+banner_desc: 'Download Free Particle Responsive Theme On drupal.org with a lots of new feature.'
+banner_url: 'https://www.facebook.com/'
+facebook_url: 'https://www.facebook.com/'
+twitter_url: 'https://twitter.com/'
+instagram_url: 'https://www.instagram.com/'
+linkedin_url: 'http://www.linkedin.com/'
+youtube_url: 'https://www.youtube.com/'
+copyright_text: '&copy; Copyright 2018· All rights reserved'
+show_social_icon: 1
+show_scrolltop: 1
+show_copyright: 1
+banner_image: {  }
+display_scroller: 1
+scroller: Right
+banner_url_text: 'Read More'

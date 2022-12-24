@@ -1,0 +1,25 @@
+name: Dark page Theme
+type: theme
+description: 'Custom Theme for My Website.'
+package: Other
+core_version_requirement: ^8 || ^9
+base theme: classy
+
+libraries:
+  - dark_page/global-styling
+  - dark_page/theme-styling
+
+regions:
+  site_logo: 'Site logo'
+  top_header: 'Top Header'
+  content: 'Content'
+  footer_first: 'Footer first'
+  footer_second: 'Footer Second'
+  footer_third: 'Footer third'
+
+  
+
+# Information added by Drupal.org packaging script on 2022-08-23
+version: '1.0.1'
+project: 'dark_page'
+datestamp: 1661240311

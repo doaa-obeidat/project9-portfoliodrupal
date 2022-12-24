@@ -1,0 +1,31 @@
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+        <div class="single-team">
+          <div class="image">
+              <img src="{{ file_url(content.field_image['#items'].entity.uri.value)}}"
+                   alt="{{ content.field_image['#items'].alt }}" 
+                   title="{{ content.field_image['#items'].title }}">
+              <div class="overley">
+                  <div class="social-media-icons">
+                   <ul>
+                    {% if content.field_facebook.0['#url'] %}
+                        <li><a href="{{content.field_facebook.0['#url']}}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    {% endif %}
+                    {% if content.field_twitter.0['#url'] %}
+                        <li><a href="{{content.field_twitter.0['#url']}}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    {% endif %}
+                    {% if content.field_linkedin.0['#url'] %}
+                        <li><a href="{{content.field_linkedin.0['#url']}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    {% endif %}
+                    {% if content.field_instagram.0['#url'] %}
+                        <li><a href="{{content.field_instagram.0['#url']}}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    {% endif %}
+                   </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="team-details">
+              <h3>{{content.field_member_name.0}}</h3>
+              <p>{{content.field_member_designation.0}}</p>
+          </div>
+        </div>
+      </div>

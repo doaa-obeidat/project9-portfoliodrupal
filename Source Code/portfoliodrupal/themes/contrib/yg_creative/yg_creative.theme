@@ -1,0 +1,189 @@
+<?php
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Template\Attribute;
+use Drupal\Component\Utility\SafeMarkup;
+use Drupal\file\Plugin\Core\Entity\FileInterface;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function yg_creative_preprocess_menu(&$variables, $hook) {
+  if ($hook == 'menu__main') { // We're doing that for main menu.
+    // Get the current path.
+    $current_path = \Drupal::request()->getRequestUri();
+    $items = $variables['items'];
+    foreach ($items as $key => $item) {
+      // If path is current_path, set active to li.
+      if ($item['url']->toString() == $current_path) {
+        // Add active link.
+        $variables['items'][$key]['attributes']['class'] = 'active';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function yg_creative_preprocess_page(&$variables) {
+  // Find Us Section Variables 
+  $variables['find_us_title'] = theme_get_setting('find_us_title');
+  $variables['find_us_area'] = theme_get_setting('find_us_area');
+
+  // Lets Talk Section Variables
+  $variables['lets_talk_title'] = theme_get_setting('lets_talk_title');
+  $variables['lets_talk_phone_no'] = theme_get_setting('lets_talk_phone_no');
+  $variables['lets_talk_email'] = theme_get_setting('lets_talk_email');
+    
+  // Footer Section variables
+  $variables['social_link_title'] = theme_get_setting('social_link_title');
+  $variables['twitter'] = theme_get_setting('twitter');
+  $variables['facebook'] = theme_get_setting('facebook');
+  $variables['googleplus'] = theme_get_setting('googleplus');
+  $variables['linkedin'] = theme_get_setting('linkedin');
+  $variables['instagram'] = theme_get_setting('instagram'); 
+  $variables['siteurl']=theme_get_setting('site_frontpage', 'node');
+}
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function yg_creative_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+
+  // Header Section Start
+  $form['drushup_settings']['find_us'] = array(
+    '#type' => 'details',
+    '#title' => t('Footer Find Us Settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+
+  $form ['drushup_settings']['find_us']['find_us_title'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Find Us Title'),
+    '#default_value' => theme_get_setting('find_us_title'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+  $form ['drushup_settings']['find_us']['find_us_area'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Find Us Area'),
+    '#default_value' => theme_get_setting('find_us_area'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+  // Lets talk Section Start
+  $form['drushup_settings']['lets_talk'] = array(
+    '#type' => 'details',
+    '#title' => t('Lets talk Section'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+
+  $form ['drushup_settings']['lets_talk']['lets_talk_title'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Lets Talk Title'),
+    '#default_value' => theme_get_setting('lets_talk_title'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+  $form ['drushup_settings']['lets_talk']['lets_talk_phone_no'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Lets Talk Phone No'),
+    '#default_value' => theme_get_setting('lets_talk_phone_no'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+  $form ['drushup_settings']['lets_talk']['lets_talk_email'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Lets Talk Email'),
+    '#default_value' => theme_get_setting('lets_talk_email'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+  // footer Section Start
+  $form['drushup_settings']['footer'] = array(
+    '#type' => 'details',
+    '#title' => t('Footer Social Links Theme Settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+
+  $form ['drushup_settings']['footer']['social_link_title'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Social Link Title'),
+    '#default_value' => theme_get_setting('social_link_title'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+  $form ['drushup_settings']['footer']['facebook'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Facebook'),
+    '#default_value' => theme_get_setting('facebook'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+  $form ['drushup_settings']['footer']['twitter'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Twitter'),
+    '#default_value' => theme_get_setting('twitter'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  ); 
+
+  $form ['drushup_settings']['footer']['googleplus'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Google +'),
+    '#default_value' => theme_get_setting('googleplus'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+  $form ['drushup_settings']['footer']['linkedin'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Linkedin'),
+    '#default_value' => theme_get_setting('linkedin'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+  $form ['drushup_settings']['footer']['instagram'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Instagram'),
+    '#default_value' => theme_get_setting('instagram'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function yg_creative_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Get Request Object.
+  $request = \Drupal::request();
+
+  // If there is HTTP Exception..
+  if ($exception = $request->attributes->get('exception')) {
+    // Get the status code.
+    $status_code = $exception->getStatusCode();
+    if (in_array($status_code, array(401, 403, 404))) {
+      $suggestions[] = 'page__' . $status_code;
+    }
+  }
+  
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'page__' . $node->bundle();
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function yg_creative_theme(&$existing, $type, $theme, $path) {
+  $hooks = array();
+  $hooks['user_login_form'] = array(
+      'render element' => 'form',
+      'template' => 'user-login-form',
+  );
+  return $hooks;
+}
+?>

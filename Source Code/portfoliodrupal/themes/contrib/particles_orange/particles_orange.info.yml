@@ -1,0 +1,28 @@
+name: Particles Orange
+type: theme
+description: 'Fully responsive theme with particle js background. Designed and Developed by <b><a href="https://www.drupal.org/u/harshita-mehra">Harshita Mehra</a></b>.'
+base theme: stable
+core_version_requirement: '^8 || ^9'
+libraries:
+  - particles_orange/theme-styling
+  - particles_orange/theme-scripts
+
+# Regions
+regions:
+  header: 'Header'
+  main_navigation: 'Main Navigation'
+  top_banner: 'Top banner'
+  highlighted: 'Highlighted'
+  content_top: 'Content Top'
+  content: 'Content'
+  sidebar_first: 'Left sidebar'
+  sidebar_second: 'Right sidebar'
+  footer_first: 'First Bottom'
+  footer_second: 'Second Bottom'
+  footer_third: 'Third Bottom'
+  footer_fourth: 'Fourth Bottom'
+  footer: 'Footer'
+# Information added by Drupal.org packaging script on 2022-06-16
+version: '1.2.0'
+project: 'particles_orange'
+datestamp: 1655371513

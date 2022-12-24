@@ -1,0 +1,21 @@
+{{ content.field_top_banner.0 }}
+<!-- {% set date = node.createdtime|format_date('post_date') %} -->
+{% set createdDate = node.getCreatedTime|format_date('post_date') %}
+<!-- {% set createdDate = node.getCreatedTime|format_date('post_date') %} -->
+<section id="blog-detail">
+  <div class="container">
+    <div class="row blog-detail-description">
+      <div class="blog-detail-header">
+        <h5>{{content.field_blog_title.0}}</h5>
+        {% trans %}
+        <h6>Posted by: {{ author_name }} | Published On: {{ createdDate }}</h6>
+        {% endtrans %}
+      </div>
+       <img src="{{ file_url(content.field_blog_image['#items'].entity.uri.value) }}" alt="blog-img" class="img-responsive">
+        <div class="blog-detail-desc">
+          {{content.body.0}}
+        </div>  
+          {{content.field_comments}}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+
+<header id="header">
+  <div class="intro">
+    <div class="overlay">
+      <div id="self-slider">
+        <div id="carousel-sr" class="carousel slide carousel-fade">
+            <div class="carousel-inner" role="listbox">
+              {% for result in view.result %}
+              <div class="item slide1 {% if ( loop.index == 1 )  %}active{% endif %}" style="background-image: url('{{ file_url(view.field.uri.value(view.result[loop.index-1])| image_style('banner_image')) }}');background-repeat: no-repeat; background-size: cover;">
+                <div class="row">
+                  <div class="container">
+                      <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <h2 data-animation="animated fadeIn">
+                        {% autoescape false %}
+                        {{ view.field.body.value(view.result[loop.index-1]) }}
+                        {% endautoescape %}
+                        </h2>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+                              
+            </div>
+            <a class="left carousel-control" href="#carousel-sr" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-sr" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+

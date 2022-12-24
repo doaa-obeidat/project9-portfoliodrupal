@@ -1,0 +1,20 @@
+uuid: d24f86a7-cec7-4378-a0d0-4b2d31a849f2
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dark_page
+_core:
+  default_config_hash: CdXfDmRgAvms7EQovxxWPdYi0GitxeRbVtScYK16ZH0
+id: dark_page_local_actions
+theme: dark_page
+region: content
+weight: -2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

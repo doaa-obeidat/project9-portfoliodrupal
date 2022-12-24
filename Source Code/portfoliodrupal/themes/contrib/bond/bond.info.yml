@@ -1,0 +1,29 @@
+name: Bond
+type: theme
+description: "The Bond theme profile bootstrap 4 based"
+package: Bond Theme
+core: 8.x
+core_version_requirement: ^8 || ^9
+libraries:
+  - bond/global-styling
+
+base theme: false
+
+regions:
+  header_left: Header Left
+  main_navigation: Main Navigation
+  header_right: Header Right
+  content_header: Content Header
+  content_top: Content Top
+  content_top_fluid: Content Top Fluid
+  content: Content
+  content_bottom: Content Bottom
+  content_bottom_fluid: Content Bottom Fluid
+  sidebar_right: Sidebar Right
+  footer_top: Footer Top
+  footer: Footer
+
+# Information added by Drupal.org packaging script on 2020-06-22
+version: '1.0.0-alpha1'
+project: 'bond'
+datestamp: 1592786977

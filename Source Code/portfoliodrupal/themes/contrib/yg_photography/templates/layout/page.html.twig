@@ -1,0 +1,66 @@
+<!-- End NavBar -->
+
+<div class="main-menu-area fixed-top" id="main-menu">
+  <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-white site-navigation navbar-togglable">
+          {{page.logo}}
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="fa fa-bars"></span>
+          </button>
+          {{page.primary_menu}}
+      </nav>
+  </div>
+</div>
+<!-- End Navbar -->
+
+{% set url = url('<current>') %}
+{% if 'user' in url|render|render %}
+<!-- Top Banner Section -->
+
+<div class="top-banner" style="background-image:url('{{banner_image}}');">
+    <div class="container top-banner-caption text-center">
+      <h1>{{page['#title']}}</h1>
+    </div>
+</div>
+
+<!-- End Top Banner Section -->
+{% endif %}
+
+{{page.content}}
+
+{% if page.instagram_feeds %}
+  <section id="instagram-feed" class="wow fadeInUp text-center"> 
+        <div class="container">
+          {{page.instagram_feeds}}
+        </div>
+  </section>
+{% endif %}
+
+
+<!-- Start footer section -->
+<footer class="dark-wrapper inverse-text">
+    <div class="sub-footer">
+      <div class="container inner text-center"> 
+        {{page.footer}}
+        <p>© 2018<span><a href="#"> YG Photography</a></span>. All rights reserved. Developed by <a href="https://www.drupaldevelopersstudio.com/" target="_blank">Drupal Developers Studio</a></p>
+        <ul class="social social-bg social-s">
+            {% if twitter %}
+                  <li><a href="{{twitter}}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            {% endif %}
+            {% if facebook %}
+                  <li><a href="{{facebook}}"><i class="fa fa-facebook-f" aria-hidden="true"></i></a></li>
+            {% endif %}
+            {% if pinterest %}
+                    <li><a href="{{pinterest}}"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+            {% endif %}
+            {% if vimeo %}
+                  <li><a href="{{vimeo}}"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+            {% endif %}
+            {% if instagram %}
+                  <li><a href="{{instagram}}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            {% endif %}
+        </ul>
+      </div> 
+    </div>
+  </footer>
+<!-- End footer Section -->  

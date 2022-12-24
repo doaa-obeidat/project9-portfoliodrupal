@@ -1,0 +1,40 @@
+<nav id="menu" class="navbar navbar-default navbar-fixed-top">
+  <div class="wrapper container">
+  <div class="row">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="{{ path('<front>') }}"><img src="{{ logopath }}" alt="logo"></a>
+      </div>    
+        {{ page.primary_menu }}   
+  </div>
+  </div>
+</nav>
+
+{{ page.slider }}
+
+ <a id="main-content"></a>
+          {{ page.content }}
+
+
+
+
+<div id="footer">
+  <div class="container text-center">
+    <div class="call">{{ call_us }}</div>
+    <p>YG Insurance Drupal Theme © 2018</p>
+    <p><a href="{{privacy_url}}">{{privacy_policy}}</a> | <a href="{{careers_url}}">{{careers}}</a> | <a href="{{News_url}}">{{News}}</a></p>
+    <p>Theme By <a href="https://www.drupaldevelopersstudio.com" target="_blank">Drupal Developers Studio</a>, A Division of <a href="https://www.youngglobes.com" target="_blank">Young Globes</a></p>
+    <div class="social">
+    {% if facebook  %}
+    <a href="{{facebook}}"><i class="fa fa-facebook"></i></a> 
+    {% endif %}
+    {% if twitter  %}
+    <a href="{{twitter}}"><i class="fa fa-twitter"></i></a> 
+    {% endif %}
+    {% if youtube  %}
+    <a href="{{youtube}}"><i class="fa fa-youtube"></i></a>
+    {% endif %}
+    </div>
+  </div>
+</div>
+<a id="back-to-top" href="#home" class="btn btn-custom btn-lg page-scroll" role="button" title="Go To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>

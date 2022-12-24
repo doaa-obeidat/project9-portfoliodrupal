@@ -1,0 +1,221 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template in this directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ *
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - messages: Status and error messages. Should be displayed prominently.
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.logo: Items for the header region.
+ * - page.navigation: Items for the primary menu region.
+ * - page.content: The main content of the current page.
+ * - page.footer_first: Items for the footer region.
+ * - page.footer_second: Items for the footer region.
+ * - page.footer_third: Items for the footer region.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ */
+#}
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container-fluid">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-xl-11 d-flex align-items-center justify-content-between">
+        {% if page.site_logo %}
+        {{ page.site_logo }}
+        {% endif %}
+        {% if page.top_header %}
+          <nav id="navbar" class="navbar">
+             {{ page.top_header }}            
+            <i class="fa fa-bars mobile-nav-toggle"></i>
+          </nav><!-- .navbar -->
+          {% endif %}
+        </div>
+        
+      </div>
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= hero Section ======= -->
+    {% if slideshow_display %}
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        <ol id="hero-carousel-indicators" class="carousel-indicators"></ol>
+        <div class="carousel-inner" role="listbox">
+             {% for key, option in slide %}
+             {% if key matches '/^\\d+$/' %}
+               {% if loop.first %}
+               {% if option.image %}
+          <div class="carousel-item active" style="background-image: url({{ option.image }})">
+          {% endif %}
+            <div class="carousel-container">
+              <div class="container">
+              {% if option.image %}
+                <h2 class="animate__animated animate__fadeInDown">{{ option.slide_head }}</h2>
+              {% endif %}
+                {% if option.slide_desc %}
+                <p class="animate__animated animate__fadeInUp">{{ option.slide_desc }}</p>
+              {% endif %}
+              {% if option.slide_link_text or slide_url %}
+                <a href="{{ slide_url }}" class="btn-get-started scrollto animate__animated animate__fadeInUp">{{ option.slide_link_text }}</a>
+                {% endif %}
+              </div>
+            </div>
+          </div> 
+           {% else %}
+           {% if option.image %}
+          <div class="carousel-item active" style="background-image: url({{ option.image }})">
+          {% endif %}
+            <div class="carousel-container">
+              <div class="container">
+              {% if option.slide_head %}
+                <h2 class="animate__animated animate__fadeInDown">{{ option.slide_head }}</h2>
+                {% endif %}
+                {% if option.slide_desc %}
+                <p class="animate__animated animate__fadeInUp">{{ option.slide_desc }}</p>
+                {% endif %}
+                {% if option.slide_link_text or slide_url %}
+                <a href="{{ slide_url }}" class="btn-get-started scrollto animate__animated animate__fadeInUp">{{ option.slide_link_text }}</a>
+                {% endif %}
+              </div>
+            </div>
+          </div> 
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon fa fa-chevron-left" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon fa fa-chevron-right" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  <!-- End Hero Section -->
+ <div class="container">
+   {{page.content}}
+ </div>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+        {% if show_footer_first_details %}
+          <div class="col-lg-3 col-md-6 footer-info">
+          {% if footer_company_logo %} 
+          <img class="footer_logo" src= "{{ footer_company_logo }}" />     
+            {% endif %}
+            {% if footer_comp_desc %}      
+            <p>{{ footer_comp_desc }}</p> 
+            {% endif %}        
+          </div>
+          {% endif %}
+          {% if page.footer_second %}
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+            {{ page.footer_second }}
+            </ul>
+          </div>
+          {% endif %}
+          <div class="col-lg-3 col-md-6 footer-contact">  
+          {% if show_contact_details %}
+          {% if footer_head %}
+            <h4>{{ footer_head }}</h4>
+           {% endif %}          
+            <p>
+            {% if location %}
+             {{ location }}
+             {% endif %}
+             <br>
+           {% if contact %}
+              <strong>Phone: </strong>{{ contact }}<br>
+             {% endif %}
+              {% if emails %}
+              <strong>Email: </strong>{{ emails }}<br>
+              {% endif %}
+            </p>
+           {% endif %}
+            {% if show_social_icon %}
+            <div class="social-links">
+              {% if twitter_url %}
+              <a href="{{ twitter_url }}" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              {% endif %}
+              {% if facebook_url %}
+              <a href="{{ facebook_url }}" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              {% endif %}
+              {% if instagram_url %}
+              <a href="{{ instagram_url }}" class="instagram"><i class="fa fa-instagram"></i></i></a>
+              {% endif %}
+              {% if youtube_url %}
+              <a href="{{ youtube_url }}" class="youtube"><i class="fa fa-youtube"></i></a>
+              {% endif %}
+              {% if linkedin_url %}
+              <a href="{{ linkedin_url }}" class="linkedin"><i class="fa fa-linkedin"></i></a>
+              {% endif %}
+            </div>
+           {% endif %}
+          </div>
+            {% if show_newsletter_details %}
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            {% if footer_news_head %}
+            <h4>{{ footer_news_head }}</h4>
+            {% endif %}
+            {% if footer_news_desc %}
+            <p>{{ footer_news_desc }}</p>
+            {% endif %}
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% if footer_copyright %}
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>DarkPage</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+      {{ footer_copyright }}
+      </div>
+    </div>
+    {% endif %}
+  </footer><!-- End Footer -->
+  {% if arrow_up %}
+  <a href="#" class="back-to-top scroll-icon-{{ arrow_up }} d-flex align-items-center justify-content-center"><i class="fa fa-arrow-up"></i></a> 
+  {% endif %}
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->

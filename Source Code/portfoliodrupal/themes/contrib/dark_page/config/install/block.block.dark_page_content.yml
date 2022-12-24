@@ -1,0 +1,22 @@
+uuid: 20a4e01e-765b-4580-bb1b-d8205d082e0f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dark_page
+_core:
+  default_config_hash: a0Yyx1GeyKarZ4T_yXQBR_ZFKnXiFLtxAb6gWLd8nr0
+id: dark_page_content
+theme: dark_page
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

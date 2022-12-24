@@ -1,0 +1,22 @@
+uuid: fc6e17f2-e8e6-4b1f-8097-575b5b4f2e1f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bond
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: bond_local_tasks
+theme: bond
+region: content
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

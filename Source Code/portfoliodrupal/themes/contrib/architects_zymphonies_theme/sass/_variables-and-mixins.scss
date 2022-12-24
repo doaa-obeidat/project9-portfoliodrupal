@@ -1,0 +1,42 @@
+
+// Variables
+$fontFamily: 'Poppins', sans-serif;
+$titleFontFamily: 'Oswald', sans-serif;;
+$baseFontSize: 14px;
+$bodyBGColor: #000;
+$baseFontColor: #999;
+
+$linkColor: #f0cb35;
+$linkColorHover: #d8782d;
+
+// Header
+$headerBGColor: #000;
+$headerTextColor: #f0cb35;
+
+// Menu Color
+$menuTextColor: $linkColor;
+$menuTextActiveColor: #f0cb35;
+
+$mobileMenuBg: #000;
+$desktopMenuTextColor: #fff;
+$desktopMenuDropDownBg: $linkColor;
+$borderColor: #d8782d;
+
+// Mixin
+@mixin globalButton(){
+	color: #000;
+	cursor: pointer;
+	border: 0;
+	padding: 14px 30px;
+	line-height: 100%;
+	margin-right: 2px;
+	display: inline-block;
+    background: $linkColorHover;
+	@include border-radius(0px);
+	@include transition(all 0.5s);
+}
+
+@mixin globalButtonHover(){
+	background: $linkColor;
+    color: #fff;
+}

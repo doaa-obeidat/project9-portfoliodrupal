@@ -1,0 +1,20 @@
+uuid: 74a411ca-3c9e-4f51-bd9d-4b4accca6dbf
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bond
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: bond_page_title
+theme: bond
+region: content
+weight: -4
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

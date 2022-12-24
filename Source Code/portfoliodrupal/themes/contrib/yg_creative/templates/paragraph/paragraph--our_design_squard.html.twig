@@ -1,0 +1,20 @@
+<!-- About section -->
+  <section class="about about-page">
+    <div class="container">
+      <div class="row">        
+        <div class="col-md-6 about-img services-img wow fadeInRight">
+          <img src="{{ file_url(content.field_image['#items'].entity.uri.value)}}"
+              class="img-fluid" 
+              alt="{{ content.field_image['#items'].alt }}" 
+              title="{{ content.field_image['#items'].title }}">
+        </div>
+
+        <div class="col-md-6 about-description wow fadeInLeft">
+          <h2><span>{{content.field_sub_title.0}}</span>
+          {{content.field_title.0}}</h2>
+          <p>{{content.field_content.0}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<!--  End About section -->

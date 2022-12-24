@@ -1,0 +1,93 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the particles_orange theme.
+ */
+
+use Drupal\file\Entity\File;
+use Drupal\file\FileInterface;
+
+/**
+ * Implements hook_preprocess_HOOK() for Page templates.
+ *
+ * Override or insert variables into the page template.
+ */
+
+function particles_orange_preprocess_html(&$variables) {
+  // Add node id to the body class.
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if($node) {
+    $variables['attributes']['class'][] = 'node-' . $node->id();
+  }
+}
+
+function particles_orange_preprocess_page(&$variables) {
+  $variables['banner_display'] = theme_get_setting('banner_display','particles_orange');
+  $variables['banner_head'] = theme_get_setting('banner_head','particles_orange');
+  $variables['banner_desc'] = check_markup(theme_get_setting('banner_desc','particles_orange'), 'full_html');
+  $variables['banner_url'] = theme_get_setting('banner_url','particles_orange');
+  $variables['banner_url_text'] = theme_get_setting('banner_url_text','particles_orange');
+  $path =  base_path() . $variables['directory'];
+  //image
+  $fid = theme_get_setting("banner_image", "particles_orange");
+  if (!empty($fid)) {
+    $file = \Drupal\file\Entity\File::load($fid[0]);
+    $uri = $file->getFileUri();
+    $image_path = file_create_url($uri);
+  }
+  else {
+    $image_path = $path.'/assets/images/background.jpg';
+  }
+  $variables['banner_image'] = $image_path;
+
+  $variables['this_year']= date('Y');
+
+  $variables['footer_col'] = ( ( (bool) $variables['page']['footer_first'] + (bool) $variables['page']['footer_second'] + (bool) $variables['page']['footer_third'] + (bool) $variables['page']['footer_fourth'] ) );
+  $variables['footer_col'] = ($variables['footer_col'] > 0)
+  ? (12 / $variables['footer_col']) : 0;
+
+  $variables['show_social_icon'] = theme_get_setting('show_social_icon');
+  $variables['show_copyright'] = theme_get_setting('show_copyright');
+  $variables['scroller'] = theme_get_setting('scroller');
+  $variables['display_scroller'] = theme_get_setting('display_scroller');
+  $variables['facebook_url'] = theme_get_setting('facebook_url');
+  $variables['instagram_url'] = theme_get_setting('instagram_url');
+  $variables['twitter_url'] = theme_get_setting('twitter_url');
+  $variables['youtube_url'] = theme_get_setting('youtube_url');
+  $variables['linkedin_url'] = theme_get_setting('linkedin_url');
+  $variables['copyright_text'] = check_markup(theme_get_setting('copyright_text'), 'full_html');
+}
+
+function particle_responsive_preprocess_maintenance_page(&$variables) {
+  // By default, site_name is set to Drupal if no db connection is available
+  // or during site installation. Setting site_name to an empty string makes
+  // the site and update pages look cleaner.
+  // @see template_preprocess_maintenance_page
+  if (!$variables['db_is_active']) {
+    $variables['site_name'] = '';
+  }
+}
+
+/**
+ * Prepares variables for comment templates.
+ *
+ * Default template: comment.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the comment and entity objects.
+ *     Array keys: #comment, #commented_entity.
+ */
+function particles_orange_preprocess_breadcrumb(&$variables) {
+  // Set cache context as 'URL'.
+  $variables['#cache']['contexts'][] = 'url';
+
+  // Set breadcrumb.
+  if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
+    $variables['breadcrumb'][] = [
+      'text' => $node->getTitle(),
+      'url' => $node->toURL()
+    ];
+  }
+}

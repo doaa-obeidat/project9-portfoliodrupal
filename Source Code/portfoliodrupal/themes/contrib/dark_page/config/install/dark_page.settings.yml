@@ -1,0 +1,47 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+slideshow_display: 1
+slide1_head: 'Work To Become ,Not To Acquire'
+slide1_desc: 'our work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do'
+slide1_url: my.com
+slide1_link_text: 'Get Started'
+slide1_image: {  }
+slide2_head: 'El pasaje estándar Lorem Ipsum'
+slide2_desc: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
+slide2_url: my.com
+slide2_link_text: 'Get Started'
+slide2_image: {  }
+slide3_head: 'de Finibus Bonorum et Malorum'
+slide3_desc: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias'
+slide3_url: my.com
+slide3_link_text: 'Get Started'
+slide3_image: {  }
+show_social_icon: 1
+facebook_url: 'https://about.facebook.com/'
+twitter_url: 'https://twitter.com/'
+instagram_url: 'https://about.facebook.com/'
+linkedin_url: 'https://www.linkedin.com/'
+youtube_url: 'https://www.youtube.com/'
+footer_details: 1
+footer_copyright: 'Designed by Lorem Ipsum'
+show_footer_first_details: 1
+footer_company_logo: {  }
+footer_comp_desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+show_contact_details: 1
+footer_head: 'Contact us'
+contact: '+1 (949) 354-2574'
+location: '26985 Brighton Lane,
+Lake Forest, CA 92630'
+emails: darkpage@info.com
+show_newsletter_details: 1
+footer_news_head: 'Our Newsletter'
+footer_news_desc: 'Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.'
+body_details: 1
+arrow_up: right

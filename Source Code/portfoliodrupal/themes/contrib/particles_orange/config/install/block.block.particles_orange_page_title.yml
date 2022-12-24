@@ -1,0 +1,20 @@
+uuid: 27f2751a-79c1-4b04-9aa3-d81ace467789
+langcode: en
+status: true
+dependencies:
+  theme:
+    - particles_orange
+_core:
+  default_config_hash: ItFhhiUOoeR7oIq73ZaCV7PAYrOwXZ-9fazMzF5DJXM
+id: particles_orange_page_title
+theme: particles_orange
+region: content_top
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,20 @@
+
+{% set topics = fields.field_categories.content|split(',') %}
+{% set topics = topics|merge({'b': 'col-md-4 col-sm-6 col-xs-12 categories'}) %}
+
+<div {{ attributes.addClass(topics) }} >
+  <div class="portfolio-item wow fadeInUp">
+      <a href="{{fields.field_image.content}}" class="portfolio-popup">
+        <img src="{{fields.field_image.content}}" width="200px" alt="Latest photos" title="Latest Photos">
+        <div class="portfolio-overlay">
+          <div class="portfolio-info middle"><p class="wow fadeInUp"></p>
+            <ul class="icon">
+                <li>
+                  <i class="fa fa-plus"></i>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </a> 
+  </div>
+</div>

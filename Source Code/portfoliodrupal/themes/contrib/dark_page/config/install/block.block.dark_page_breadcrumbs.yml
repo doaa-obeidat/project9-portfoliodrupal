@@ -1,0 +1,22 @@
+uuid: 4aaa95d1-c0ca-44be-9be5-940e2c600350
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dark_page
+_core:
+  default_config_hash: NjcxOBrPOiK5-38t56DwFBDVY4yer7YSlbRWXFuHe7A
+id: dark_page_breadcrumbs
+theme: dark_page
+region: content
+weight: -4
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

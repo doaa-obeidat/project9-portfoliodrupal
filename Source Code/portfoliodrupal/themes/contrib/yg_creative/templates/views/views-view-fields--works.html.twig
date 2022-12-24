@@ -1,0 +1,12 @@
+<div class="col-md-4 col-sm-12 work-lists wow fadeInLeft">
+  <div class="hovereffect">
+    {{ fields.field_image.content }}
+    <div class="overlay">             
+     <h4>{{fields.title.content}}</h4>
+     <p>{{fields.body.content|striptags}}</p>
+     <a href="{{fields.view_node.content}}" class="btn btn-info">
+     	{{ fields.field_link_title.content }}
+     </a>
+  	</div>
+  </div>
+</div>

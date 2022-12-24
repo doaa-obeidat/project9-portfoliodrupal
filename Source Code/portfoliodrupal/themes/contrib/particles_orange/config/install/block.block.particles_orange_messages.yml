@@ -1,0 +1,22 @@
+uuid: 4d78ec16-14cf-4eb4-aaf0-28b5d0fa2430
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - particles_orange
+_core:
+  default_config_hash: KC12e0aosUnBBs5bd374JVcQjJaFNOSIHzu0dUGf22o
+id: particles_orange_messages
+theme: particles_orange
+region: highlighted
+weight: -4
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

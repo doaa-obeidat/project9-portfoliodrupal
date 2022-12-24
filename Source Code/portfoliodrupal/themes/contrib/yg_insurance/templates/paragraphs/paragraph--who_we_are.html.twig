@@ -1,0 +1,21 @@
+<div id="self">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="section-title">         
+          <h2>{{content.field_who_we_title.0}}</h2>
+        </div>        
+        {{ content.field_who_are_desc.0 }}
+      <a data-animation="animated fadeIn" href="{{ content.field_who_we_link[0]['#url']|render }}" class="btn btn-custom pull-right">{{ content.field_who_we_link[0]['#title']|render }}</a>
+      </div>
+      <div class="col-md-4">
+        <div class="section-title">         
+          <h2>{{content.field_form_title.0}}</h2>
+        </div>
+        {{ content.field_enquiry_form.0}}
+      </div> 
+    </div>
+  </div>
+</div>
+<!-- services view -->
+{{ content.field_our_services.0}}

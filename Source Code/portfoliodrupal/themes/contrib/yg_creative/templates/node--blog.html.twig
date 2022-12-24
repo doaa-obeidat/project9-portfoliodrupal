@@ -1,0 +1,21 @@
+{{content.field_banner_section}}
+<!-- Blog detail -->
+<section id="blog-detail">
+  <div class="container">
+    <div class="row blog-detail-description">
+      <div class="col-md-10 mx-auto blog-detail-header text-center wow fadeInDown">
+        <h2><span>{{ node.created.value|date("d M Y h.ia")  }}</span><br>
+        {{node.title.value}}</h2>
+      </div>
+       <img src="{{file_url(node.field_image.entity.uri.value)}}" 
+            alt="{{ content.field_image['#items'].alt }}" 
+            class="img-fluid wow fadeInDown" 
+            title="{{ content.field_image['#items'].alt }}">
+        <div class="blog-detail-desc wow fadeInUp">
+          {{content.body}}
+        </div>  
+    </div>
+  </div>
+</section>        
+<!-- End Blog detail -->
+{{content.field_sections}}

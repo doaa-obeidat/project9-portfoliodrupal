@@ -1,0 +1,19 @@
+<!-- Top banner Section -->
+<section id="top-banner" style="background-image: url('{{ file_url(content.field_banner_image['#items'].entity.uri.value)}}');background-repeat: no-repeat;background-size: cover;">
+  <div class="container">
+    <div class="row">
+      <div class="banner-caption">
+      <h1>{{content.field_page_title.0}}</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Top banner Section -->
+<div id="block-breadcrumbs">    
+	<nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+		<ol>
+			<li><a href="/">Home</a></li>
+			<li>{{content.field_page_title.0}}</li>
+		</ol>
+	</nav>
+</div>	

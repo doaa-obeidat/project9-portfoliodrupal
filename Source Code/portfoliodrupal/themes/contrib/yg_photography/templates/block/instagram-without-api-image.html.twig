@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Default theme implementation of an Instagram image with link.
+ *
+ * Available variables:
+ * - data: The array returned from the Instagram image and path request.
+ * - width: The display width of the image.
+ * - height: The display height of the image.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% spaceless %}
+  {% if data %}
+        <div class="row">
+          <div class="instagram owl-carousel owl-theme">
+     {% for item in data %}
+
+             <div class="col-md-12 col-sm-12 insta-image-list">
+                  <a target="_blank" href="{{ item.path }}">
+                    <img alt="instagram image"  src="{{ item.image }}">
+                  <i class="fa fa-instagram"></i></a>
+              </div> 
+      {% endfor %}
+       </div>
+      </div>
+  {% endif %}
+{% endspaceless %}

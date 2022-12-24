@@ -1,0 +1,22 @@
+uuid: 55156d43-1bd0-4a47-9922-d1450c795c84
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bond
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: bond_content
+theme: bond
+region: content
+weight: 1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

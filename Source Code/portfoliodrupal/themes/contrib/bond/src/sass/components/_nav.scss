@@ -1,0 +1,12 @@
+.nav {
+  &.tab-basic {
+    margin-bottom: rem(20px);
+
+    .nav-item {
+      &.active a {
+        color: $white;
+        background-color: $allports;
+      }
+    }
+  }
+}

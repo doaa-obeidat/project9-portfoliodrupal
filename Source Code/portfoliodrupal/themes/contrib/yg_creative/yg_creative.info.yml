@@ -1,0 +1,23 @@
+name: 'YG Creative'
+description: 'YG Creative is a Drupal 8 theme perfect for Innovation related websites'
+core_version_requirement: ^8 || ^9
+type: theme
+base theme: classy
+screenshot: yg-creative.png
+
+regions:
+  logo: Logo
+  primary_menu: Primary Menu
+  content: Content
+  footer_menu: Footer Menu
+  footer_about: Footer About
+
+libraries:
+  - yg_creative/global-styling
+
+
+
+# Information added by Drupal.org packaging script on 2020-08-24
+version: '2.0.0'
+project: 'yg_creative'
+datestamp: 1598266835

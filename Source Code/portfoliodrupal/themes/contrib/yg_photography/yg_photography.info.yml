@@ -1,0 +1,24 @@
+name: 'YG Photography'
+description: 'YG Photography is a Responsive Drupal 8 theme.'
+core_version_requirement: ^8 || ^9
+type: theme
+base theme: classy
+screenshot: yg_photography.png
+
+regions:
+  header: Header
+  logo: Logo
+  primary_menu: Primary menu
+  content: Content
+  instagram_feeds: Instagram Feeds
+  footer: Footer
+
+libraries:
+  - yg_photography/global-styling
+
+
+
+# Information added by Drupal.org packaging script on 2020-08-26
+version: '2.0.0'
+project: 'yg_photography'
+datestamp: 1598412945

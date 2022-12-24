@@ -1,0 +1,45 @@
+@import '../../../node_modules/sass-rem/rem';
+@import 'init/color';
+@import 'init/typography';
+@import 'init/variable';
+// utilities
+@import 'mixins/keyframes';
+// components
+@import 'mixins/parallax';
+@import 'mixins/caret';
+
+// Text Colors
+.text-ghost {
+  color: $ghost; 
+}
+
+.text-curiousBlue {
+  color: $curious-blue;
+}
+
+.text-allports {
+  color: $allports;
+}
+
+.text-dustyGray {
+  color: $dusty-gray;
+}
+
+// Background Colors
+.bg-mineShaft {
+  background-color: $mine-shaft;
+}
+
+// General styles
+.btn-search {
+  top: 0;
+  right: 0;
+}
+
+.radius-rounded {
+  border-radius: 10em;
+}
+
+.nounderline {
+  text-decoration: none !important;
+}

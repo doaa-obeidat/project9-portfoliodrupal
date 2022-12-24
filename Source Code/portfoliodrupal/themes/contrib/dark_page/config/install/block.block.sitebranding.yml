@@ -1,0 +1,23 @@
+uuid: 7bc08605-bf85-4d2f-8bde-5f0fc26636b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dark_page
+id: sitebranding
+theme: dark_page
+region: site_logo
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

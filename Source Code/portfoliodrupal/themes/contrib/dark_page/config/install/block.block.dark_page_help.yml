@@ -1,0 +1,22 @@
+uuid: 17f76c5c-b325-479f-b65b-b531aca2340a
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - dark_page
+_core:
+  default_config_hash: jccFSSVqV0WCDb6NtML1VWAWTtDbZ-zn5YgTRMgMrIM
+id: dark_page_help
+theme: dark_page
+region: site_logo
+weight: -4
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

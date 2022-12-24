@@ -1,0 +1,17 @@
+
+<!-- Testimonial slider  -->
+<section id="testimonial">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-1 col-md-10">
+            <div class="testimonial-slider owl-carousel owl-theme">
+                {% for row in rows %}
+                     {{ row.content }}
+                  {% endfor %}               
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- End Testimonial slider  -->

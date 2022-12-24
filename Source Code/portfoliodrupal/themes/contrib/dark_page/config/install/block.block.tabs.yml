@@ -1,0 +1,20 @@
+uuid: a2ef11fe-3acd-4f03-af70-441928682045
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dark_page
+id: tabs
+theme: dark_page
+region: content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

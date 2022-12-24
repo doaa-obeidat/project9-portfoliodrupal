@@ -1,0 +1,20 @@
+uuid: 730c6012-73b3-4c57-bb51-fbcd207a58bb
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bond
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: bond_local_actions
+theme: bond
+region: content
+weight: 0
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

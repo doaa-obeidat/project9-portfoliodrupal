@@ -1,0 +1,5 @@
+# Required to validate default theme settings.
+
+particles_orange.settings:
+  type: theme_settings
+  label: 'Particle responsive settings'

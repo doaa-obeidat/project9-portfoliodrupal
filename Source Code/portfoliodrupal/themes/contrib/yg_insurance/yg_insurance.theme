@@ -1,0 +1,191 @@
+<?php
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Template\Attribute;
+use Drupal\Component\Utility\SafeMarkup;
+use Drupal\file\Plugin\Core\Entity\FileInterface;
+
+
+// function yg_medical_preprocess_html(&$variables) {
+//     $current_path = \Drupal::service('path.current')->getPath();
+//   if ($current_path == 'path/where/block/appears') {
+//     $vars['attributes']['class'][] = 'path-pagefront';
+//   }
+// }
+
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function yg_insurance_preprocess_menu(&$variables, $hook) {
+  if ($hook == 'menu__main') { // We're doing that for main menu.
+    // Get the current path.
+    $current_path = \Drupal::request()->getRequestUri();
+    $items = $variables['items'];
+    foreach ($items as $key => $item) {
+      // If path is current_path, set active to li.
+      if ($item['url']->toString() == $current_path) {
+        // Add active link.
+        $variables['items'][$key]['attributes']['class'] = 'active';
+      }
+    }
+  }
+}
+function yg_insurance_preprocess_breadcrumb(&$variables){
+  $request = \Drupal::request();
+ $route_match = \Drupal::routeMatch();
+ $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+
+ $variables['breadcrumb'][] = array(
+   'text' => $page_title
+ );
+ $variables['#cache']['contexts'][] = 'url.path';
+}
+
+function yg_insurance_preprocess_views_view_unformatted(&$variables) {
+  $variables['directory'] = theme_get_setting('directory');
+}
+
+
+function yg_insurance_preprocess_page(&$variables) {
+
+  $variables['basepath'] = $GLOBALS['base_url'];
+  $variables['logopath'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+  $variables['call_us'] = theme_get_setting('call_us');
+  $variables['privacy_policy'] = theme_get_setting('privacy_policy'); 
+  $variables['privacy_url'] = theme_get_setting('privacy_url'); 
+  $variables['careers'] = theme_get_setting('careers');
+  $variables['careers_url'] = theme_get_setting('careers_url');
+  $variables['News'] = theme_get_setting('News');
+  $variables['News_url'] = theme_get_setting('News_url');
+  $variables['facebook'] = theme_get_setting('facebook');
+  $variables['twitter'] = theme_get_setting('twitter');
+  $variables['youtube'] = theme_get_setting('youtube');
+  
+ //  $block = \Drupal\block\Entity\Block::load('simplenewssubscription');
+ //  $block_content = \Drupal::entityTypeManager()
+ //    ->getViewBuilder('block')
+ //    ->view($block);
+ // $variables['youblockname'] = $block_content;
+
+}
+
+
+function yg_insurance_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  
+
+
+ $form['drushup_settings']['footer'] = array(
+    '#type' => 'details',
+    '#title' => t('Theme Settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+ $form['drushup_settings']['footer']['directory'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('directory'),
+    '#default_value' => theme_get_setting('directory'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+ $form['drushup_settings']['footer']['call_us'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('call_us'),
+    '#default_value' => theme_get_setting('call_us'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+
+  $form ['drushup_settings']['footer']['privacy_policy'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('privacy_policy'),
+    '#default_value' => theme_get_setting('privacy_policy'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+  $form ['drushup_settings']['footer']['privacy_url'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('privacy_url'),
+    '#default_value' => theme_get_setting('privacy_policy'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+   $form ['drushup_settings']['footer']['careers'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('careers'),
+    '#default_value' => theme_get_setting('careers'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+  $form ['drushup_settings']['footer']['careers_url'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('careers'),
+    '#default_value' => theme_get_setting('careers_url'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+   $form ['drushup_settings']['footer']['News'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('News'),
+    '#default_value' => theme_get_setting('News'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+   $form ['drushup_settings']['footer']['News_url'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('News'),
+    '#default_value' => theme_get_setting('News_url'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+  $form ['drushup_settings']['footer']['facebook'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('facebook'),
+    '#default_value' => theme_get_setting('facebook'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+
+  $form ['drushup_settings']['footer']['twitter'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('twitter'),
+    '#default_value' => theme_get_setting('twitter'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+  $form ['drushup_settings']['footer']['youtube'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('youtube'),
+    '#default_value' => theme_get_setting('youtube'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function yg_insurance_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Get Request Object.
+  $request = \Drupal::request();
+
+  // If there is HTTP Exception..
+  if ($exception = $request->attributes->get('exception')) {
+    // Get the status code.
+    $status_code = $exception->getStatusCode();
+    if (in_array($status_code, array(401, 403, 404))) {
+      $suggestions[] = 'page__' . $status_code;
+    }
+  }
+}
+
+function yg_insurance_theme(&$existing, $type, $theme, $path) {
+  $hooks = array();
+  $hooks['user_login_form'] = array(
+      'render element' => 'form',
+      'template' => 'user-login-form',
+  );
+  return $hooks;
+}
+
+
+?>

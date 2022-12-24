@@ -1,0 +1,22 @@
+uuid: 662c8fc6-8729-45a6-af03-0d4a3ca25563
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - particles_orange
+_core:
+  default_config_hash: y0bXRvKYQQKkf_RVxA3aOPGpIfKKsDOzzrWYCgjxJ9Y
+id: particles_orange_breadcrumbs
+theme: particles_orange
+region: highlighted
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }
